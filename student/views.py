@@ -5,11 +5,18 @@ from rest_framework import status
 from student.serializers import StudentSerializer
 from student.models import Student
 from rest_framework import mixins, generics
+from rest_framework import viewsets
+
+
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
 
 
 class StudentList2(generics.ListCreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
 
 class DetailStudent2(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
