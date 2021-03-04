@@ -7,6 +7,15 @@ from student.models import Student
 from rest_framework import mixins, generics
 
 
+class StudentList2(generics.ListCreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+class DetailStudent2(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+
+
 class StudentList(mixins.ListModelMixin, mixins.CreateModelMixin,generics.GenericAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer

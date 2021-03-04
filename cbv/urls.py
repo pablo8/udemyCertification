@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from student.views import ListingStudent, StudentDetail
-from student.views import StudentList, DetailStudent
+# from student.views import StudentList, DetailStudent
+from student.views import StudentList2, DetailStudent2
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('listing_student/', ListingStudent.as_view()),
     # path('student/<int:pk>/', StudentDetail.as_view()),
-    path('listing_student/', StudentList.as_view()),
-    path('student/<int:pk>/', DetailStudent.as_view())
+    path('listing_student/', StudentList2.as_view()),
+    path('student/<int:pk>/', DetailStudent2.as_view())
 ]
