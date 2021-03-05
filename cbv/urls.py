@@ -19,9 +19,13 @@ from django.urls import path, include
 # from student.views import StudentList, DetailStudent
 from student.views import StudentList2, DetailStudent2, StudentViewSet
 from rest_framework.routers import DefaultRouter
+from nsApp.author.views import ListAuthor, DetailAuthor
+from nsApp.books.views import ListBook, DetailBook
+
 
 router = DefaultRouter()
 router.register('student', StudentViewSet)
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -29,5 +33,9 @@ urlpatterns = [
     # # path('student/<int:pk>/', StudentDetail.as_view()),
     # path('listing_student/', StudentList2.as_view()),
     # path('student/<int:pk>/', DetailStudent2.as_view())
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('author/', ListAuthor.as_view()),
+    path('author/<int:pk>/', DetailAuthor.as_view()),
+    path('book/', ListBook.as_view()),
+    path('book/<int:pk>/', DetailBook.as_view()),
 ]
