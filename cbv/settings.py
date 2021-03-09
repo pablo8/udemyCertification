@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'student',
     'rest_framework',
     'nsApp.author',
-    'nsApp.books'
+    'nsApp.books',
+    'nsApp.customer',
+    'nsApp.order'
 
 ]
 

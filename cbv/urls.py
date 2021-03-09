@@ -21,6 +21,8 @@ from student.views import StudentList2, DetailStudent2, StudentViewSet
 from rest_framework.routers import DefaultRouter
 from nsApp.author.views import ListAuthor, DetailAuthor
 from nsApp.books.views import ListBook, DetailBook
+from nsApp.customer.views import ListCustomer, DetailCustomer
+from nsApp.order.views import ListOrder, DetailOrder
 
 
 router = DefaultRouter()
@@ -34,8 +36,12 @@ urlpatterns = [
     # path('listing_student/', StudentList2.as_view()),
     # path('student/<int:pk>/', DetailStudent2.as_view())
     path('', include(router.urls)),
-    path('author/', ListAuthor.as_view()),
-    path('author/<int:pk>/', DetailAuthor.as_view()),
-    path('book/', ListBook.as_view()),
-    path('book/<int:pk>/', DetailBook.as_view()),
+    # path('author/', ListAuthor.as_view()),
+    # path('author/<int:pk>/', DetailAuthor.as_view()),
+    # path('book/', ListBook.as_view()),
+    # path('book/<int:pk>/', DetailBook.as_view()),
+    path('customer/', ListCustomer.as_view()),
+    path('customer/<int:pk>/', DetailCustomer.as_view()),
+    path('order/', ListOrder.as_view()),
+    path('order/<int:pk>/', DetailOrder.as_view()),
 ]
